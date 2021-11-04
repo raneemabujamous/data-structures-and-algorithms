@@ -14,11 +14,12 @@ toString : returns all the nodes in a list in a String format.
 Within your Linked List class, include a head property.
 Upon instantiation, an empty Linked List should be created.
 The class should contain the following methods
-*insert
+\*insert
+
 Arguments: value
 Returns: nothing
 Adds a new node with that value to the head of the list with an O(1) Time performance.
-*includes
+\*includes
 Arguments: value
 Returns: Boolean
 Indicates whether that value exists as a Node’s value somewhere within the list.
@@ -46,3 +47,4 @@ test expecting failed
 Insert(): which takes value of type any adding new node with the input value to the list.
 include(): this method compare input value if it's exist in linked list.
 toString(): return a string visiulizing the linked list shape.
+![img](code555e.PNG)
