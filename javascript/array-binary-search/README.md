@@ -6,7 +6,7 @@ function that recieve two parameter first is an array secound is a key and shoul
 
 <!-- Embedded whiteboard image -->
 
-![array-binary-search/code3004.png](code3004.png)
+![array-binary-search/code3004.png](edit14044.PNG)
 
 ## Approach & Efficiency
 
