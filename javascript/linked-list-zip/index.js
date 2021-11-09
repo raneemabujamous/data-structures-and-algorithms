@@ -1,0 +1,15 @@
+const LinkedList = require("./LinkedList");
+const newLinkedList = new LinkedList();
+newLinkedList.append(1);
+newLinkedList.append(2);
+newLinkedList.append(3);
+newLinkedList.append(4);
+const list = new LinkedList();
+const list1 = new LinkedList();
+const list2 = new LinkedList();
+list1.append(1);
+list1.append(2);
+list2.append(3);
+list2.append(4);
+list.zipLists(list1, list2);
+console.log(list.toString());
