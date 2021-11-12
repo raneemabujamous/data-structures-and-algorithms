@@ -12,4 +12,4 @@ list1.append(2);
 list2.append(3);
 list2.append(4);
 list.zipLists(list1, list2);
-console.log(list.toString());
+console.log(list);

@@ -3,20 +3,19 @@
 const LinkedList = require("../LinkedList");
 
 describe("linked-list zip ", () => {
-  it("returns the value of a given index from the end of alinked list", () => {
-    const ll = new LinkedList();
-    const list1 = new LinkedList();
-    list1.insert("4");
-    list1.insert("3");
-    list1.insert("2");
-    list1.insert("1");
-    const list2 = new LinkedList();
-    list2.insert("7");
-    list2.insert("6");
-    list2.insert("5");
+  it("zipLists  Happy case", () => {
+    let list1 = new LinkedList();
+    list1.append(1);
+    list1.append(3);
+    list1.append(5);
 
-    expect(ll.zipLists(list1, list2)).toEqual(
-      "head -> [1] -> [5] -> [2] -> [6] -> [3] -> [7] -> [4] -> X"
+    let list2 = new LinkedList();
+    list2.append(2);
+    list2.append(4);
+    list2.append(6);
+    let newList = new LinkedList();
+    expect(newList.zipLists(list1, list2)).toEqual(
+      "{1}-->{2}-->{3}-->{4}-->{5}-->{6}-->null"
     );
   });
 });
