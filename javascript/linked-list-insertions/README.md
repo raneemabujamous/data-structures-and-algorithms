@@ -15,6 +15,8 @@ adds a new node with the given new value immediately after the first node that h
 ## Whiteboard Process
 
 ![](lab06.PNG)
+![](code6eadit.PNG)
+![](codech66.png)
 
 <!-- Embedded whiteboard image -->
 
