@@ -1,10 +1,5 @@
-
-
 ## Whiteboard Process
 
 ![](codelab07.PNG)
 
-
-
-
-![](code77.PNG)
+![](codeeditteste.PNG)
