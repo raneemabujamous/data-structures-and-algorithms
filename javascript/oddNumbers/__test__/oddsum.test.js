@@ -15,7 +15,8 @@ describe("test odd sum fun", () => {
     two.left = five;
     three.left = six;
     let tree = new Binarytree(one);
-    let result = 21;
+    let result = 9;
+    console.log(oddSum(tree));
     expect(oddSum(tree)).toBe(result);
   });
 });
