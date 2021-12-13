@@ -4,24 +4,28 @@ class HashMap {
     this.size = size;
     this.map = new Array(size);
   }
+
   getHash(key) {
+    console.log(key, typeof key);
     const sumCharCode = key.split("").reduce((acc, char) => {
       return acc + char.charCodeAt(0);
     }, 0);
     const hashKey = (sumCharCode * 19) % this.size;
     return hashKey;
   }
+
   set(key, value) {
-    const hashKey = this.getHash(key);
-    if (!this.map[hashKey]) {
-      this.map[hashKey] = new LinkedList();
+    let hash;
+    if (typeof key == "number") {
+      hash = key;
+    } else {
+      hash = this.hash(key);
     }
-    const entry = { [key]: value };
-    this.map[hashKey].add(entry);
-  }
-  get(key) {
-    const hashed = this.getHash(key);
-    return this.map[hashed].head;
+    if (!this.map[hash]) {
+      this.map[hash] = new LinkedList();
+    }
+    let entry = { [key]: value };
+    this.map[hash].add(entry);
   }
 
   contain(key) {
@@ -38,42 +42,41 @@ class HashMap {
       return false;
     }
   }
-  treeIntersection(tree1, tree2) {
+  treeIntersection(firstTree, secondTree) {
     let key;
-    let result = [];
-    let hash;
     let counter = 0;
-    let _treverse = (node) => {
+    let hash;
+    let results = [];
+    let traverseTree = (node) => {
       key = node.value;
-      this.set(key, "no value");
+      this.set(key, "noValue");
       if (counter > 0) {
-        // this if just use in secound tree
-        typeof key == "number" ? (hash = key) : this.getHash(key);
+        typeof key === "number" ? (hash = key) : this.getHash(key);
         if (this.map[hash].head.next) {
-          // that mean if this value hashed before it will push it to result
-          result.push(hash);
+          results.push(hash);
         }
       }
       if (node.left) {
-        _treverse(node.left);
+        traverseTree(node.left);
       }
       if (node.right) {
-        _treverse(node.right);
+        traverseTree(node.right);
       }
     };
-    _treverse(tree1.root);
+    traverseTree(firstTree.root);
     counter++;
+    traverseTree(secondTree.root);
 
-    _treverse(tree2.root);
-    return result;
+    return results;
   }
+
   deplecatedWoerd(string) {
     // first we save string inside hash table then check if it was found
     const array = string.toLowerCase().split(" ");
     let key;
     let hash;
     for (let i = 0; i < array.length; i++) {
-      let key = array[i];
+      key = array[i];
       this.set(key, "");
       hash = this.getHash(key); // just to loop throw function
       if (this.map[hash].head.next) {

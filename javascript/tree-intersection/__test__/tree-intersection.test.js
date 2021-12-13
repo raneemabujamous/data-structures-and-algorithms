@@ -3,8 +3,8 @@ const BinaryTree = require("../bainaryTree.js");
 const Node = require("../Node.js");
 
 describe("TREES INTERSECTION TESTS", () => {
-  let tree1;
-  let tree2;
+  let firstTree;
+  let secondTree;
   beforeAll(() => {
     //first tree
     let one = new Node(150);
@@ -54,23 +54,27 @@ describe("TREES INTERSECTION TESTS", () => {
     nine2.left = ten2;
     nine2.right = eleven2;
 
-    tree1 = new BinaryTree(one);
-    tree2 = new BinaryTree(one2);
+    firstTree = new BinaryTree(one);
+    secondTree = new BinaryTree(one2);
   });
   // successfuly return the common nodes between two trees
-  it("1.successfuly return the common nodes between two trees", () => {
+  it(" common nodes between two trees", () => {
     let hashTable = new Hashmap(5000);
     let expectedResults = [100, 160, 125, 175, 350, 500, 200];
 
-    expect(hashTable.treeIntersection(tree1, tree2)).toEqual(expectedResults);
+    expect(hashTable.treeIntersection(firstTree, secondTree)).toEqual(
+      expectedResults
+    );
   });
 
   // check the next of uncommon elements is null in the hash table
-  it("2.check the next of uncommon elements is null in the hash table", () => {
+  it(" uncommon elements is null in the hash table", () => {
     let hashTable = new Hashmap(5000);
     let expectedResults = [100, 160, 125, 175, 350, 500, 200];
-    expect(hashTable.treeIntersection(tree1, tree2)).toEqual(expectedResults);
-    expect(hashTable.storage[42].head.next).toBeNull();
-    expect(hashTable.storage[100].head.next).toBeTruthy();
+    expect(hashTable.treeIntersection(firstTree, secondTree)).toEqual(
+      expectedResults
+    );
+    expect(hashTable.map[42].head.next).toBeNull();
+    expect(hashTable.map[100].head.next).toBeTruthy();
   });
 });
