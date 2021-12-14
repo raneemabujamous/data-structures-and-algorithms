@@ -30,7 +30,7 @@ class HashTable {
     return this.map[hash].head;
   }
   contain(key) {
-    const hash = this.hash(key);
+    const hash = this.getHash(key);
     if (this.map[hash]) {
       let current = this.map[hash].head;
       while (current) {
