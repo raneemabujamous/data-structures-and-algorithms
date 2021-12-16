@@ -1,5 +1,3 @@
-const LinkedList = require("./LinkedList");
-const hashMap = require("./hashmap-left-join");
 const leftJoin = (hashmap1, hashmap2) => {
   let result = [];
   let tempKey;
